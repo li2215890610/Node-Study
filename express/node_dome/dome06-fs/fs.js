@@ -88,7 +88,7 @@ function fsStat({ fsObj, fs}) {
 exports.readdirPromise = ({ fs, path, searchPath }) => {
 
   return new Promise((resolve) => {
-    //打印所有文件 组成数组, 挨个删除有upload字段的所有
+    //打印所有文件 组成数组, 为了挨个删除包含有upload的所有文件或者目录
     fs.readdir(path, (_, files) => {
       resolve(files)
     })
