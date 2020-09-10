@@ -16,7 +16,7 @@ exports.mkdir = ({ fs, path }) => {
 }
 
 exports.readdir = ({ fs, cb, path, searchPath }) => {
-  console.log(fs);
+  // console.log(fs);
   //打印所有文件 组成数组, 挨个删除有upload字段的所有
   fs.readdir(path, (_, files) => {
     let dirs = [];
@@ -39,7 +39,7 @@ exports.readdir = ({ fs, cb, path, searchPath }) => {
 
       fs.stat(paths.join('./', files[i]), (_, data) => {
 
-        console.log(data,'______data____');
+        console.log(data, '______data____');
         if (data.isFile()) {
           dirs.push({
             key: FILE,
@@ -61,3 +61,64 @@ exports.readdir = ({ fs, cb, path, searchPath }) => {
 
   });
 }
+
+
+function fsStat({ fsObj, fs}) {
+  return new Promise((resolve)=>{
+    fs.stat(paths.join('./', fsObj), (_, data) => {
+
+      if (data.isFile()) {
+        resolve({
+          key: FILE,
+          value: fsObj
+        })
+      }
+
+      if (data.isDirectory()) {
+        resolve({
+          key: DIRECTORY,
+          value: fsObj
+        })
+      }
+
+    });
+  })
+}
+
+exports.readdirPromise = ({ fs, path, searchPath }) => {
+
+  return new Promise((resolve) => {
+    //打印所有文件 组成数组, 挨个删除有upload字段的所有
+    fs.readdir(path, (_, files) => {
+      resolve(files)
+    })
+  }).then((files)=>{
+    //区分是目录 还是文件返回数组
+    return new Promise((resolve)=>{
+
+      Promise.all(files.map((fsObj)=>{
+
+        return fsStat({ fsObj, fs})
+      })).then((dirs)=>{
+
+        resolve(dirs)
+      })
+    })
+
+  }).then((dirs)=>{
+
+    return new Promise((resolve)=>{
+      let list = [];
+
+      dirs.map(dir => {
+        if (dir.value.search(searchPath) !== -1) {
+          list.push(dir)
+        }
+      });
+
+      resolve(list)
+    })
+  })
+}
+
+

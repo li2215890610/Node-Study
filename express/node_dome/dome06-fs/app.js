@@ -4,6 +4,7 @@ var fsf = require("./fs");
 const path = './upload';
 const FILE = 'FILE';
 const DIRECTORY = 'DIRECTORY';
+const searchPath = 'upload';
 
 // 判断服务器上面有没有upload目录，如果没有upload就创建这个目录，如果有不做任何操作 （图片上传）
 //封装文件
@@ -16,7 +17,7 @@ const statFile = ({ fileList }) => {
       return
     }
 
-    if (fileList.length) {
+    if (fileList.length > 1) {
       fileList.map(item => {
         console.log(item)
         if (item.key === FILE) {
@@ -35,13 +36,17 @@ const statFile = ({ fileList }) => {
     }
 
     //不存在目录
-    if (!data.isDirectory()) {
+    if (!data.isDirectory() || (fileList.length === 1 && fileList[0] !== searchPath)) {
       fsf.mkdir({ fs, path })
     }
   })
 }
 
-//打印所有文件 组成数组, 挨个删除有upload字段的所有
-fsf.readdir({ fs, path:"./",searchPath:"upload", cb:(fileList)=>{
+// //打印所有文件 组成数组, 挨个删除有upload字段的所有
+// fsf.readdir({ fs, path:"./",searchPath:"upload", cb:(fileList)=>{
+//   statFile({ fileList})
+// }})
+
+fsf.readdirPromise({ fs,path:"./",searchPath,}).then((fileList)=>{
   statFile({ fileList})
-}})
+})
