@@ -52,7 +52,6 @@ async function main(){
 main()
  */
 
-
 async function isDir({ path}){
   return new Promise((resolve, reject)=>{
     fs.stat(path, (err, data) => {
