@@ -1,5 +1,5 @@
 {
-  "name": "dome11-ejs",
+  "name": "dome12-ejs_get_post",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
@@ -8,5 +8,8 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.5"
+  }
 }
