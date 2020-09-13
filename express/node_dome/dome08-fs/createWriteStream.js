@@ -1,5 +1,6 @@
 var fs = require("fs");
 let str = '';
+//写入文件
 for (let i = 0; i < 200; i++) {
   str += `我是从数据库执行的${i}`;
 }
