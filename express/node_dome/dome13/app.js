@@ -1,6 +1,8 @@
 var http = require("http");
 var url = require("url");
 var routers = require("./module/routes");
+var qureyString = require("querystring");
+var ejs = require("ejs");
 
 http.createServer('/',function (req,res) {
 

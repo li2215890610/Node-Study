@@ -29,7 +29,6 @@ app.get('/news',(_,res)=>{
 })
 
 app.get('/login',(_,res)=>{
-  
   res.writeHead(200,{
     "Content-Type":"text/html;charset=utf-8"
   })
