@@ -8,7 +8,7 @@ const servers = () => {
     G_POST:{}
   }
 
-  const app = (req,res)=>{
+  const app = (req,res) =>{
     console.log('init app');
     const URL = url.parse(req.url,true).pathname
     const METHOD = req.method.toLocaleUpperCase();
