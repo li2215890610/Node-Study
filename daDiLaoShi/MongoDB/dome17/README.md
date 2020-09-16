@@ -51,7 +51,8 @@ sudo mkdir -p /data/db
 cd /usr/local/mongdb/bin/
 //运行数据库
 ./mongod
-
+//操作数据库
+mongo
 
 //浏览器输入
 localhost:27017 
