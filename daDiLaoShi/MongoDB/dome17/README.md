@@ -49,7 +49,7 @@ sudo mkdir -p /data/db
 //运行 MongoDB
 //进入
 cd /usr/local/mongdb/bin/
-// 运行
+//运行数据库
 ./mongod
 
 
