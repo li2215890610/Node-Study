@@ -30,7 +30,7 @@
 
 //删除数据
 // 删除 username == lisi 的数据
-// db.ta b le.remove({"username":"lisi"})
+// db.table.remove({"username":"lisi"})
 
 //删除 age 大于30数据
 // db.table.remove({"age":{$gt:30}})
