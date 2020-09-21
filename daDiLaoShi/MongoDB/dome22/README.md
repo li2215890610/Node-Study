@@ -5,8 +5,7 @@
 ##### 创建超级管理员账户
 
 ```
-//开启权限
-./mongod --auth
+
 
 use dbname 
 
@@ -21,6 +20,9 @@ db.dropUser("admin")
 
 //查看用户
 show users
+
+//开启权限数据库
+./mongod --auth
 
 //连接使用数据库
 mongo dbname -u admin -p admin1
