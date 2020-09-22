@@ -1,5 +1,7 @@
 #### P25 25、【MongoDb高级】拓展-Mongodb数据库的备份和还原
 
+##### 以下操作首先启动数据库 ./mongod
+
 ##### 备份数据库
 ```
 mongodump -h dbhost -d dbname -o exprot_dbname -u admin -p 123456
@@ -20,6 +22,3 @@ mongorestore -h <hostname><:port> -d dbname <path>
 - [x] -u 用户名
 - [x] -p 密码
 
-
-
-mongodump -h 127.0.0.1:27017 -d itying -o /Users/liguangyang/Desktop/myStudy/mongodData
