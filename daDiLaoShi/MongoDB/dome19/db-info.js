@@ -41,7 +41,7 @@
 
 
 //查询 age >= 12 并且 age <= 20
-// db.tablename.find({"age":{$lte:20,$gte:12}}) //查询<=25的值
+// db.tablename.find({"age":{$lte:20,$gte:12}})
 
 //查询 username 中包含 zhang 的数据， 模糊查询
 // db.tablename.find({"username":/zhang/}) 
