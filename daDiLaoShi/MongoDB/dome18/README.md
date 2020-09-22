@@ -15,13 +15,11 @@ MongoDB是-一个介于关系数据库和非关系数据库之间的产品，**�
 [Mac下载](https://www.mongodb.com/try/download/community)
 
 
-##### Mac 右键自动解压 tag文件
+##### Mac 右键自动解压 tgz文件
 
-tag zxvf 解压文件路径 -C ./
+tar zxvf 解压文件路径 -C 解压后路径
 
 ##### 安装
-
-
 
 ```
 //解压在  /usr/local 文件
