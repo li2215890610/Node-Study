@@ -1,0 +1,15 @@
+{
+  "name": "dome26",
+  "version": "1.0.0",
+  "description": "[查看操作地址](https://www.runoob.com/nodejs/nodejs-mongodb.html)",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mongodb": "^3.6.2"
+  }
+}
