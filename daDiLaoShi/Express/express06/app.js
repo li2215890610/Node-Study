@@ -21,7 +21,7 @@ app.get('/', (_, res) => {
     // path: `/article`,//设置那些路由可以使用 cookie
     // domain: `.jinjuxiaodian.com`,
     // httpOnly: true, true 只能在后端使用，false 都可以使用,
-    // secure: true, //cookit 在http中是无效的，在https中是有效的
+    // secure: true, // true cookie 在http中是无效的，false 在https中是有效的
     /***
      * signed 
      *  1、配置中间件的时候需要传入加密的参数
