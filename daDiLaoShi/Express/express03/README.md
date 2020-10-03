@@ -20,6 +20,7 @@ res.render("index",{
 ```
 ##### 默认模版位置在views里面, 手动配置指定模版位置，
 ```
+const ___dirname = './wwwroot';
 app.set('views',___dirname+'/views');
 ```
 ##### ejs 解析html标签
