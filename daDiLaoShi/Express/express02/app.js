@@ -4,8 +4,6 @@ const app = express();
 
 //express 默认集成了 ejs 模版，所以不用引入
 app.set("view engine","ejs")
-const ___dirname = './wwwroot'
-app.set('views',___dirname+'/views');
 
 app.get("/",(_,result)=>{
 
