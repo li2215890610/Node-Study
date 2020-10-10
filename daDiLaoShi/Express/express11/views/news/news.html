@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>news ejs</title>
+  <link rel="stylesheet" href="/css/index.css">
+
+</head>
+<body>
+  <h2>我是news ejs模版引擎</h2>
+  
+  <%- renderHtml %>
+
+  <h3>name: <%= userInfo.username %></h3>
+  <h3>age: <%= userInfo.age %></h3>
+
+  <%if(flag === true){%>
+    我是 <%= flag%> 判断得来的
+  <%}%>
+  
+  <br/>
+  
+  <%if(count > 60){%>
+   <span> 我是 <%= count%> </span>
+  <%}else{%>
+    <%= count%>
+  <%}%>
+
+  <ul>
+    <% for(var i = 0; i < list.length; i++){%>
+      <li>
+        <div>
+          姓名：<%= list[i].name%>
+        </div>
+        <div>
+          年龄：<%= list[i].age%>
+        </div>
+      </li>
+    <%}%>
+  </ul>
+  <%- include('footer.html')%> 
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>增加导航 ejs</title>
+  <link rel="stylesheet" href="/css/admin/nav/add.css">
+</head>
+
+<body>
+  <main>
+    <form action="/admin/nav/doAdd" method="post" enctype="multipart/form-data">
+      <div>
+        <label for="title"> 标题 </label>
+        <input type="text" name="title" id="title">
+      </div>
+      <br>
+      <div>
+        <label for="title"> 图片 </label>
+        <input type="file" name="pic" id="pic">
+      </div>
+      <br>
+      <div>
+        <label for="desc"> 描述 </label>
+        <textarea name="desc" id="desc" cols="30" rows="10"></textarea>
+      </div>
+      <br>
+      <input type="submit" value="提交 ">
+    </form>
+  </main>
+</body>
+
+</html>
