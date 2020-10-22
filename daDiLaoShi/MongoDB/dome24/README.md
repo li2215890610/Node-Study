@@ -26,7 +26,7 @@ db.tablename.aggregate([{
   }
 },{
   $match:{
-    "total_price":{$get:90}
+    "total_price":{$gte:90}
   }
 }])
 ```
@@ -56,7 +56,7 @@ db.tablename.aggregate([{
   }
 },{
   $match:{
-    "total_price":{$get:90}
+    "total_price":{$gte:90}
   }
 },{
   $sort:{
@@ -78,7 +78,7 @@ db.tablename.aggregate([{
   }
 },{
   $match:{
-    "total_price":{$get:90}
+    "total_price":{$gte:90}
   }
 },{
   $sort:{
@@ -87,7 +87,6 @@ db.tablename.aggregate([{
 },{
   $limit: 10
 }
-
 ])
 ```
 
@@ -104,7 +103,7 @@ db.tablename.aggregate([{
   }
 },{
   $match:{
-    "total_price":{$get:90}
+    "total_price":{$gte:90}
   }
 },{
   $sort:{
@@ -164,15 +163,15 @@ db.tablename.aggregate([{
 db.tablename.aggregate([
   {
     $lookup:{
-      form: "order_item_tablename",
-      localFieid: "Order_id", //主表信息id
-      foreignFieid: "Order_id", //关联表信息id
+      from: "order_item_tablename",
+      localField: "Order_id", //主表信息id
+      foreignField: "Order_id", //关联表信息id
       as: "Items"
     }
   },{
     $match:{
       "all_price":{
-        $get:90
+        $gte:90
       }
     }
   }
@@ -181,5 +180,5 @@ db.tablename.aggregate([
 //  localFieid字段 为 tablename里面的字段
 //  foreignFieid 为 order_item_tablename 里面的字段 
 //  order_item_tablename 查询出来的数据,放在 as 数据里面
-
+//  $match 查询的是 tablename 里面的字段
 ```
