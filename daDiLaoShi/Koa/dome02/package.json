@@ -1,0 +1,16 @@
+{
+  "name": "dome02",
+  "version": "1.0.0",
+  "description": "[koa 官网](https://koa.bootcss.com/) [koa Npm地址](https://www.npmjs.com/package/koa) [koa 中文网](https://www.itying.com/koa/article-index-id-90.html)",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "koa": "^2.13.0",
+    "koa-router": "^10.0.0"
+  }
+}
