@@ -28,7 +28,13 @@ koaRouter.get('/news',async (ctx,next)=>{
 koaRouter.get('/news/:id',async (ctx,next)=>{
   ctx.body = `新闻详情 ${ctx.params.id}`;
 })
-
+koaRouter.get('/news/:id/:title',async (ctx,next)=>{
+  ctx.body = `
+  新闻详情 
+  id:    ${ctx.params.id}
+  title: ${ctx.params.title}
+  `;
+})
 
 // koaRouter.routes() 启动路由
 // koaRouter.allowedMethods() //作用：这是官方文档的推荐用法，我们可以看到 koaRouter.allowedMethods()，在
