@@ -13,6 +13,7 @@ app.use(views("views", { extension: 'ejs' }));// 配置这种模版引擎 views�
 app.use(bodyParser());
 
 app.use(static( path.join( __dirname, 'public') ))
+app.use(static( path.join( __dirname, 'static') )) //可以配置多个中间件 就是可以配置多个静态资源加载
 
 koaRouter.get('/', async (ctx,next)=>{
 
