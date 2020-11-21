@@ -8,7 +8,6 @@
 
 安装模块
 ```
-
 npm install --save art-template 
 
 npm install --save koa-art-template
