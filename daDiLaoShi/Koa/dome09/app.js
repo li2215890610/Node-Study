@@ -20,10 +20,9 @@ const CONFIG = {
   maxAge: 86400000,/**过期时间        【需要修改】**/
   overwrite: true, /**默认 true**/
   httpOnly: true, /**true 表示只有服务器端可以获取，false 浏览器、服务器都可以获取**/
-  signed: true, /**默认 true**/
+  signed: true, /**默认 true  一个布尔值, 表示是否要对 cookie 进行签名 (默认为 false). 如果为 true, 则还会发送另一个后缀为 .sig 的同名**/
   rolling: false, /** true 每次访问都重新设置 session**/
   renew: true, /**  当session快过期当时候，重新设置session      【需要修改】**/
-  signed: true, /** 加密 **/
 };
  
 app.use(session(CONFIG, app));
