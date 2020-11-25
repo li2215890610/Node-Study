@@ -12,7 +12,6 @@ MongoClient.connect(dbUrl,(err,client)=>{
 
   const db = client.db(dbName);
   
-  // /**
   //插入数据
   db.collection("admin").insertOne({
     password:"222",
@@ -29,6 +28,5 @@ MongoClient.connect(dbUrl,(err,client)=>{
     client.close();
     console.log("数据库关闭");
   })
-  // **/
 
 })
