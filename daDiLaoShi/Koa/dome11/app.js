@@ -1,6 +1,6 @@
 const koa = require("koa");
 const koaRouter = require("koa-router")();
-const DB = require("./module/01db")
+const DB = require("./module/db")
 const app = new koa();
 
 koaRouter.get('/', async (ctx)=>{
