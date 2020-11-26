@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List</title>
+    <link rel="stylesheet" href="css/static.css">
+</head>
+<body>
+    <h2 class="title">List <a href="http://localhost:10086" target="_blank" rel="noopener noreferrer">去添加</a></h2>
+
+    <br/>
+    {{if list.length}}
+    <ul>
+        
+        {{ each list }}
+            <li>
+                用户名：{{$value.username}} <br>
+                密　码：{{$value.password}}
+                <a href="http://localhost:10086/edit/{{@$value._id}}" target="_blank" rel="noopener noreferrer">编辑</a>
+                <a href="http://localhost:10086/delect?_id={{@$value._id}}" target="_blank" rel="noopener noreferrer">删除</a>
+            </li><br>
+        {{/each}}
+    </ul>
+    {{/if}}
+
+    {{if !list.length}}
+        暂无数据
+    {{/if}}
+
+    {{include 'public/footer.html'}}
+</body>
+</html>

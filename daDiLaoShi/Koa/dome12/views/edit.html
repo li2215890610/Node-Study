@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit</title>
+    <link rel="stylesheet" href="css/static.css">
+</head>
+<body>
+    <h2 class="title">Edit  <a href="http://localhost:10086/list" target="_blank" rel="noopener noreferrer">去复制吧</a></h2>
+
+    <form action="/edit" method="post">
+        旧用户名: <input type="text" name="oldUsername" value="{{username}}"/>
+        <br/>
+        <br/>
+        旧　密码: <input type="password" name="oldPassword" value="{{password}}"/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        新用户名: <input type="text" name="username" />
+        <br/>
+        <br/>
+        新　密码: <input type="password" name="password"/>
+        <br/>
+        <br/>
+
+        <button type="submit">提交</button>
+    </form>
+    
+
+    <% include('./public/footer.html') %>
+</body>
+</html>
